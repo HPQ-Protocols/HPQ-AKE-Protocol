@@ -1,0 +1,17 @@
+{
+  "scope": "Functional ideal-primitive regression and missing-input boundary checks",
+  "trials_per_check": 1000,
+  "passed": {
+    "original_counterexample_still_accepts": 1000,
+    "same_attack_rejected_after_correction": 1000,
+    "honest_confirmation_and_session_agreement": 1000,
+    "A_victim_missing_static_MLKEM_input": 1000,
+    "B_victim_missing_peer_RSA_input": 1000
+  },
+  "master_kdf": "HKDF-SHA256, zero salt, info=HPQ-AKE/master, output=32 bytes",
+  "encoding": "Same two-byte length-prefix helper as the frozen counterexample",
+  "randomness": "secrets.token_bytes; not the seed of any historical simulation",
+  "negative_controls": "Peer-key disclosure restores tag computation in both missing-input checks",
+  "limits": "Not exhaustive adversary exploration, real KEM implementation, timing benchmark, or reduction proof",
+  "source_sha256": "5e8fa1a071ea908641d5f9011b1bff6b72674982a00fac47d3fd71c0a45cba76"
+}

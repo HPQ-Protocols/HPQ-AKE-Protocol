@@ -1,0 +1,55 @@
+{
+  "experiment": "New RTT sensitivity analysis, not a replay of original latency results",
+  "python_version": "3.13.15",
+  "numpy_version": "2.4.1",
+  "rng": "numpy.random.Generator(numpy.random.PCG64(seed))",
+  "seeds": [
+    42,
+    43,
+    44,
+    45,
+    46,
+    47,
+    48,
+    49,
+    50,
+    51
+  ],
+  "samples_per_seed": 10000,
+  "base_rtts_ms": [
+    1,
+    20,
+    50,
+    100,
+    200,
+    400,
+    600,
+    1000
+  ],
+  "jitter_fractions": [
+    0.0,
+    0.12,
+    0.3
+  ],
+  "jitter_model": "RTT_i = base_RTT * (1 + jitter_fraction * E_i), E_i ~ Exp(scale=1)",
+  "coupling": "Same E_i reused across baselines, base RTTs and jitter fractions within each seed",
+  "cpu_ms": {
+    "hpq_ake": 7.1053,
+    "both_tls_baselines": 2.334
+  },
+  "cpu_sampling": "None; manuscript means held fixed to isolate RTT effects",
+  "rtt_multiplier_gap": 0.5,
+  "wire_bytes": {
+    "hpq_ake": 5828,
+    "pre_cached": 6409,
+    "full": 13369
+  },
+  "extra_discretionary_padding_bytes": 0,
+  "quantiles": "Pooled 100000 samples per setting; numpy.quantile(method='linear'); no trimming",
+  "percentile_interpretation": "Modeled variability, not confidence intervals",
+  "cryptographic_operations_executed": false,
+  "historical_seed_verified": true,
+  "historical_oaep_configuration_verified": true,
+  "historical_padding_verification_scope": "RSA-OAEP benchmark defaults verified; AEAD and TLS record serialization are not implemented by the supplied evaluation scripts",
+  "original_replay_manifest": "analysis/original_results/manifest.json"
+}

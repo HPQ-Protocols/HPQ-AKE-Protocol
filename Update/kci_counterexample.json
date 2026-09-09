@@ -1,0 +1,17 @@
+{
+  "scope": "Functional counterexample to Algorithm 2 as written in main.tex",
+  "primitives": "Ideal KEM and AEAD; SHA3-256, HMAC-SHA256, one-block HKDF",
+  "encoding": "Length-prefixed fields; two-byte unsigned lengths",
+  "trials": 1000,
+  "responder_accepts_claimed_honest_identity": 1000,
+  "attacker_computes_responder_session_key": 1000,
+  "honest_initiator_sessions_started": 0,
+  "long_term_secret_keys_disclosed_to_attacker": 0,
+  "attacker_decapsulates_with_honest_initiator_rsa_key": false,
+  "encrypted_challenge_ever_opened": false,
+  "altered_response_rejected_in_every_trial": true,
+  "randomness": "Fresh secrets.token_bytes values; conclusion does not depend on seed",
+  "is_original_experiment_or_crypto_benchmark": false,
+  "is_machine_checked_security_proof": false,
+  "reason": "Response depends only on master, transcript, and a recomputable challenge; master omits RSA authentication secrets"
+}
